@@ -1,0 +1,47 @@
+#%RAML 1.0
+title: demo-project for git practice
+/demo:
+    get:
+        description: this is the demo project for testing purpose
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: {
+                            "status": "demo project is successfully completed"
+                        }
+/creteDemo:
+    post:
+        body:
+            application/json:
+                example: {
+                    "empID": "100",
+                    "empName": "Mahesh",
+                    "email": "mahesh@gmail.com",
+					"skill": "Mulesoft"
+                }
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: {
+                            "status": "employee details created successfully in the demo project"
+                        } 
+/update:
+    put:
+        body:
+            application/json:
+                example:
+                    {
+                        "empID": "100",
+                        "empName": "mahesh",
+                        "email": "mahesh@gmail.com",
+						"skill": "Mulesoft"
+                    }                            
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: {
+                            "status": "employee details updated successfully"
+                        }               

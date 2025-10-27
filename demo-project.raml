@@ -1,0 +1,45 @@
+#%RAML 1.0
+title: demo-project
+/demo:
+    get:
+        description: this is the demo project for testing purpose
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: {
+                            "status": "demo project is successfully completed"
+                        }
+/creteDemo:
+    post:
+        body:
+            application/json:
+                example: {
+                    "empID": "100",
+                    "empName": "Mahesh",
+                    "email": "mahesh@gmail.com"
+                }
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: {
+                            "status": "employee details created successfully in the demo project"
+                        } 
+/update:
+    put:
+        body:
+            application/json:
+                example:
+                    {
+                        "empID": "100",
+                        "empName": "mahesh",
+                        "email": "mahesh@gmail.com"
+                    }                            
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: {
+                            "status": "employee details updated successfully"
+                        }               

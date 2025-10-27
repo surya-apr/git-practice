@@ -1,0 +1,51 @@
+#%RAML 1.0
+title: Simple API
+version: v1
+baseUri: https://api.example.com/{version}
+
+# Resource
+/users:
+  get:
+    description: Get list of users
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              [
+                { "id": 1, "name": "John Doe" },
+                { "id": 2, "name": "Jane Doe" }
+              ]
+
+  post:
+    description: Create a new user
+    body:
+      application/json:
+        example:
+          { "name": "New User" }
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              { "message": "User created successfully" }
+
+# Another Resource
+/users/{userId}:
+  get:
+    description: Get user by ID
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              { "id": 1, "name": "John Doe" }
+
+  delete:
+    description: Delete user by ID
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              { "message": "User deleted successfully" }
